@@ -1,0 +1,37 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  color: #fff;
+  margin: 0;
+  height: 100%;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 4.5rem auto 4.5rem;
+  grid-template-areas:
+    "header header"
+    "side main"
+    "footer footer";
+  gap: 1rem;
+}
+
+header {
+  background-color: #dd0426;
+  grid-area: header;
+}
+
+main {
+  background-color: #414073;
+  grid-area: main;
+}
+
+aside {
+  background-color: #ffba49;
+  grid-area: side;
+}
+
+footer {
+  background-color: #20a39e;
+  grid-area: footer;
+}

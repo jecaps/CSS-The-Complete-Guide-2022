@@ -1,0 +1,30 @@
+.box {
+  padding: 5px 10px 15px 20px;
+  border: 2px solid green;
+  margin: 5px 10px 15px 20px;
+  height: 300px;
+  width: 48%;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* #first-box {
+  height: 300px;
+  width: 50%;
+  box-sizing: border-box;
+} */
+
+#first-box {
+  display: none;
+  visibility: hidden;
+}
+
+div ~ div:hover {
+  background-color: green;
+}

@@ -1,0 +1,64 @@
+.container {
+  margin: 20px;
+  height: 800px;
+  display: grid;
+  /* grid-template-columns: 200px 5rem 20% auto; */
+
+  grid-template-columns: [hd-start] repeat(4, [col-start] 20% [col-end]) [hd-end];
+  /* If columns should be of the same width */
+
+  grid-template-rows:
+    [hd-start] 5rem [hd-end r2-s] minmax(10px, 20rem)
+    [r2-e r3-s] 100px [r3-e];
+
+  /* grid-column-gap: 20px;
+  grid-row-gap: 10px; */
+  grid-gap: 10px;
+  /* Shorthand for row-gap column-gap */
+
+  grid-template-areas:
+    "header header header header"
+    ". side main main"
+    "footer footer footer footer";
+}
+
+@media (max-width: 40rem) {
+  .container {
+    grid-template-rows:
+      [hd-start] 5rem [hd-end r2-s] minmax(10px, 20rem)
+      [r2-e r3-s] 150px [r3-e r4-s] 100px [r4-e];
+
+    grid-template-areas:
+      "header header header header"
+      "main main main main"
+      "side side side side"
+      "footer footer footer footer";
+  }
+}
+
+.el1 {
+  background: rgba(255, 154, 72, 0.5);
+  grid-area: side;
+}
+
+.el2 {
+  background: rgba(255, 0, 0, 0.5);
+  /* grid-column: 1 / -1; */
+  /* grid-row: r2-s / r2-e; */
+  z-index: 10; /* To bring element 2 over element 3 since it under it by order */
+  grid-area: main;
+}
+
+.el3 {
+  background: rgba(0, 128, 0, 0.5);
+  /* grid-column: 2 / span 3;
+  grid-row: r1-s / r2-e; */
+  /* grid-area: r1-s / 2 / r2-e / span 3; */
+  /* row-start => column start => */
+  grid-area: hd;
+}
+
+.el4 {
+  background: rgba(0, 4, 255, 0.5);
+  grid-area: footer;
+}
